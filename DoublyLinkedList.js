@@ -52,3 +52,28 @@ function insertAfter(previous_node, new_data) {
     new_node.next.previous = new_node;
   }
 }
+
+//Add a node after a given node in a Doubly Linked list
+function insertBefore(next_node, new_data) {
+  // Do check if the next node is null
+  if (next_node == null) {
+    console.log("Sorry! Wrong Position");
+    return;
+  }
+
+  //Create new node
+  var new_node = new Node(new_data);
+
+  // Make previous of next node as new node
+  new_node.previous = next_node.previous;
+
+  //Make next of new node as next node
+  new_node.next = next_node;
+
+  // Do check if new node is located as head
+  if (new_node.previous != null) {
+    new_node.previous.next = new_node;
+  } else {
+    head = new_node;
+  }
+}
