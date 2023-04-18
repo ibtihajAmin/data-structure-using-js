@@ -67,6 +67,9 @@ function insertBefore(next_node, new_data) {
   // Make previous of next node as new node
   new_node.previous = next_node.previous;
 
+  // Making prev of next node as new node
+  next_node.previous = new_node;
+
   //Make next of new node as next node
   new_node.next = next_node;
 
@@ -106,3 +109,28 @@ function append(new_data) {
   //Make last node as previous of new node
   new_node.previous = last;
 }
+
+function printLinkedList(node) {
+  var last = null;
+
+  console.log("Forward Direction");
+  while (node != null) {
+    console.log(node.data + " ");
+    last = node;
+    node = node.next;
+  }
+
+  console.log("Backward Direction");
+  while (last != null) {
+    console.log(last.data + " ");
+    last = last.previous;
+  }
+}
+
+push(7);
+push(5);
+append(3);
+insertAfter(head.next, 11);
+insertBefore(head.next.next, 17);
+
+printLinkedList(head);
