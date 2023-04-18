@@ -77,3 +77,32 @@ function insertBefore(next_node, new_data) {
     head = new_node;
   }
 }
+
+//Add a node in the last of the list
+function append(new_data) {
+  //Create a node
+  var new_node = new Node(new_data);
+
+  var last = head;
+
+  //As this is the last node, so make next of the node is null
+  new_node.next = null;
+
+  //Do check the list is empty or not. If empty, then make new node as head
+  if (head == null) {
+    new_node.previous = null;
+    head = new_node;
+    return;
+  }
+
+  //Now travarse the list till find out the last node
+  while (last.next != null) {
+    last = last.next;
+  }
+
+  //change the next of last node
+  last.next = new_node;
+
+  //Make last node as previous of new node
+  new_node.previous = last;
+}
