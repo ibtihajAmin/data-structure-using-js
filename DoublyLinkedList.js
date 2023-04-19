@@ -110,6 +110,31 @@ function append(new_data) {
   new_node.previous = last;
 }
 
+// this function is for deleting a node from the list
+function deleteNode(del) {
+  //Base Case
+  if (head == null || del == null) {
+    return;
+  }
+
+  // If targeted node is the head node
+  if (head == del) {
+    head = del.next;
+  }
+
+  //Change next only if node to be deleted is not the last node
+  if (del.next != null) {
+    del.next.previous = del.previous;
+  }
+
+  //Change previous onlt if node to be deleted is not the last node
+  if (del.previous != null) {
+    del.previous.next = del.next;
+  }
+
+  return;
+}
+
 function printLinkedList(node) {
   var last = null;
 
@@ -132,5 +157,6 @@ push(5);
 append(3);
 insertAfter(head.next, 11);
 insertBefore(head.next.next, 17);
+deleteNode(head);
 
 printLinkedList(head);
