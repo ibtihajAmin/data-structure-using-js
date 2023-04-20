@@ -20,17 +20,17 @@ function push(new_data) {
 
 //This function is created for reverse the linked list
 function reverseList(node) {
-  var prev = null;
+  var prev_pointer = null;
   var current = node;
-  var next = null;
+  var next_pointer = null;
 
   while (current != null) {
-    next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
+    next_pointer = current.next;
+    current.next = prev_pointer;
+    prev_pointer = current;
+    current = next_pointer;
   }
-  node = prev;
+  node = prev_pointer;
   return node;
 }
 
