@@ -33,14 +33,14 @@ function push(new_data) {
 //Function to Reverse the doubly linked list
 function reverseList() {
   var temp = null;
-  var current = head;
+  var current_node = head;
 
   //Swap the next and previous pointer for all nodes of doubly linked list
-  while (current != null) {
-    temp = current.previous;
-    current.previous = current.next;
-    current.next = temp;
-    current = current.previous;
+  while (current_node != null) {
+    temp = current_node.previous;
+    current_node.previous = current_node.next;
+    current_node.next = temp;
+    current_node = current_node.previous;
   }
 
   if (temp != null) {
