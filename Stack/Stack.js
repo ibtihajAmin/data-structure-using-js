@@ -14,7 +14,8 @@ class Stack {
   //For data deletion, pop function is made
   pop = () => {
     if (this.items.length === 0) {
-      return "Stack is Underflow";
+      console.log("Stack is Underflow");
+      return;
     } else {
       return this.items.pop();
     }
