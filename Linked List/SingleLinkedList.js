@@ -70,7 +70,7 @@ function deleteNode(key) {
 
   //If head node itself holds the key then key will be deleted
   if (temp != null && temp.data == key) {
-    head = temp.next; //head chaned
+    head = temp.next; //head changed
     return;
   }
 
