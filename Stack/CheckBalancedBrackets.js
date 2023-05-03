@@ -33,7 +33,7 @@ function checkBalancedBrackets(str) {
   return stack.length == 0;
 }
 
-let str = "[{()}]";
+let str = "()[]{}";
 
 if (checkBalancedBrackets(str)) console.log("Balanced ");
 else console.log("Not Balanced ");
